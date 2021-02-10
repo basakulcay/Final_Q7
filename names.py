@@ -27,16 +27,30 @@ boy()
 def main():
     girlName=input('Enter a girl name: ')    
     girlCheck=open('girls.txt','r')
+    
+    boyName=input('Enter a boy name: ')
+    boyCheck=open('boys.txt','r')
 
     for girl in girlCheck:
         girlStrip=girl.rstrip('\n')
         
         if girlStrip==girlName:
-            print('The name is among most popular girl names')
+            print('The girl name is among most popular girl names')
         else:
-            print('The name is NOT among most popular girl names')
+            print('The girl name is NOT among most popular girl names')
         break
+    
+    for boy in boyCheck:
+        boyStrip=boy.rstrip('\n')
         
+        if boyStrip==boyName:
+            print('The boy name is among most popular boy names')
+        else:
+            print('The boy name is NOT among most popular boy names')
+        break
+      
+    
+    
     girlCheck.close()
-    #boyCheck.close()
+    boyCheck.close()
 main()
